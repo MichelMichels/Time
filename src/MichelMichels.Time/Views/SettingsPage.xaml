@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:PageView
+    x:Class="MichelMichels.Time.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MichelMichels.Time.Views"
+    xmlns:vm="clr-namespace:MichelMichels.Time.ViewModels"
+    Title="Settings"
+    x:DataType="{x:Type vm:SettingsViewModel}">
+    <VerticalStackLayout
+        Padding="32"
+        HorizontalOptions="FillAndExpand"
+        MaximumWidthRequest="512"
+        Spacing="16">
+        <Label
+            HorizontalOptions="Start"
+            Style="{StaticResource Headline}"
+            Text="Settings" />
+
+        <VerticalStackLayout>
+            <Label Text="Font size" />
+            <Slider
+                Maximum="{Binding MaxFontSize}"
+                Minimum="{Binding MinFontSize}"
+                Value="{Binding FontSize}" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Text="{Binding MinFontSize}" />
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Text="{Binding FontSize}" />
+                <Label
+                    Grid.Column="2"
+                    HorizontalOptions="End"
+                    Text="{Binding MaxFontSize}" />
+            </Grid>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Margin="0,0,0,8" Text="DateTime format" />
+            <Entry IsSpellCheckEnabled="False" Text="{Binding DateTimeFormat}" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Margin="0,0,0,8" Text="Font family" />
+            <Picker
+                FontFamily="{Binding FontFamily}"
+                ItemsSource="{Binding FontFamilies}"
+                SelectedItem="{Binding FontFamily}" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</local:PageView>

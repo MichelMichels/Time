@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:PageView
+    x:Class="MichelMichels.Time.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MichelMichels.Time.Views"
+    xmlns:vm="clr-namespace:MichelMichels.Time.ViewModels"
+    x:DataType="{x:Type vm:MainViewModel}">
+    <Label
+        FontFamily="{Binding FontFamily}"
+        FontSize="{Binding FontSize}"
+        HorizontalOptions="Center"
+        LineBreakMode="NoWrap"
+        Text="{Binding Time}"
+        VerticalOptions="Center" />
+
+</local:PageView>
